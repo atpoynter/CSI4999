@@ -1,0 +1,19 @@
+<!-- form needed for signup, derived and modified from class -->
+            <h2 id=h2-signup class="txt-outline">Sign-Up</h2>
+                <form id="signupForm" action="process-login.php" method="post">
+                        <label for="firstName">First name:</label>
+                        <input type="text" id="firstName" name="firstName" onchange='clientValidation(this.form);'><br>
+                        <label for="lastName">Last name:</label>
+                        <input type="text" id="lastName" name="lastName"onchange='clientValidation(this.form);'><br>
+                        <label for="userName">Username:</label>
+                        <input type="text" id="userName" name="userName" onchange='clientValidation(this.form);'><br>
+                        <label for="email">E-mail Address:</label>
+                        <input type="text" id="email" name="email" onchange='clientValidation(this.form);'><br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" onchange='clientValidation(this.form);'><br>
+                        <label for="verify">Verify Password:</label>
+                        <input type="password" id="verify" name="verify" onchange='clientValidation(this.form);'><br><br>
+                        <input class="grow" id="signupSubmit" type="submit" value="submit" />
+                        <input class="grow" type="reset" />
+                        <input type="hidden" name="signupForm" value="1" />
+                      </form> 

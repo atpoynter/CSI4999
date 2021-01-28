@@ -1,0 +1,9 @@
+<!-- Serves as the login form elements, with js modified from class homework -->
+<form id="loginForm" action="process-login.php" method="post">
+    <label for="login_userName">Username:</label>
+        <input type="text" id="login_userName" name="username" onchange='clientValidation(this.form);'>
+        <label for="login_password">Password:</label>
+        <input type="password" id="login_password" name="password" onchange='clientValidation(this.form);'>
+        <input type="submit" value="Submit" id ="loginSubmit" />
+        <input type="hidden" name="loginForm" value="1" />
+  </form> 

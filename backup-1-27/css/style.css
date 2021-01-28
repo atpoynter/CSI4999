@@ -1,0 +1,129 @@
+body {
+    font-family: serif;
+    font-size: 15x;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: oldlace;
+}
+
+/* Universal */
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#formContainer {
+    margin: auto;
+    width: 50%;
+    /* border: 3px solid rgb(0, 55, 128); */
+    padding: 10px;
+}
+
+/* Header*/
+
+header {
+    background: #3542bb;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #f8591b 3px solid;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: 16px;
+    font-size: 16px;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight,
+header .current a {
+    color: #e8691b;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: yellow;
+    font-weight: bold;
+}
+
+img {
+    align-items: center;
+}
+
+.header {
+    align-content: center
+}
+
+iframe {
+    margin: 10pt;
+    float: left;
+}
+
+/* Element and Container Specific */
+#signupForm > input[type=text], #signupForm > input[type=password] {
+    display: block;
+    position: relative;
+    left: 80px;
+    color: #000000;
+    background-color: #eee;
+   /* background-color: #515152;
+    */
+    border-bottom: 2px solid;
+    border-bottom-color: rgb(255, 102, 0);
+}
+/* FORMS AND HOMEWORK #5 */
+#signupForm > input[type=text], #signupForm > input[type=password], #signupForm > label{
+    font-size: 12pt;
+    margin-left: 5%;
+    width: 220px;
+    padding: 2px 2px;
+    cursor: pointer;
+    caret-color: rgba(21, 68, 31, 0.7);
+}
+/* FORMS AND HOMEWORK #5 */
+#signupForm > input[type=submit]{
+    height: 30px;
+    width: 80px;
+    margin-left: 20%;
+    font-weight: bolder;
+}
+/* FORMS AND HOMEWORK #5 */
+#signupForm > input[type=reset]{
+    height: 30px;
+    width: 70px;
+    margin-left: 5%;
+    font-weight: bolder;
+}
+/* FORMS AND HOMEWORK #5 */
+input[type=button]:hover, input[type=reset]:hover {
+    border-color: #318BDE;
+}
+/*Mainframe */
