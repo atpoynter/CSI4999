@@ -154,7 +154,10 @@ public class OCRActivity extends AppCompatActivity {
                     }
             }
         }
+
+
         //Dismiss Dialog
         waitingDialog.dismiss();
     }
+
 }
