@@ -1,4 +1,4 @@
-package com.example.csi_4999;
+package com.example.mlkittest;
 
 import org.junit.Test;
 

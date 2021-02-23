@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "CSI-4999"
+rootProject.name = "ML_kit_Test"
