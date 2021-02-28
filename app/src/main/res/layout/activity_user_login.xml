@@ -6,7 +6,16 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:padding="20dp"
-    tools:context="com.example.mlkittest.UserLoginActivity">
+    tools:context="com.example.mlkittest.com.csi4999.mlkittest.LoginActivity">
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="121dp"
+        android:text="@string/signup" />
 
     <TextView
         android:id="@+id/textView"
@@ -55,5 +64,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="@string/log_in_here" />
+
 
 </RelativeLayout>

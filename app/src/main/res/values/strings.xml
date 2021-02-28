@@ -16,4 +16,10 @@
     <string name="enter_your_username_here">Enter Your Username Here</string>
     <string name="enter_your_password_here">Enter Your Password Here</string>
     <string name="log_in_here">Log In Here</string>
+    <string name="signup">SignUp</string>
+    <string name="camera">Camera</string>
+    <string name="button">Button</string>
+    <string name="barcode">Barcode</string>
+    <string name="submit2">Submit</string>
+    <string name="large_png">large png</string>
 </resources>
