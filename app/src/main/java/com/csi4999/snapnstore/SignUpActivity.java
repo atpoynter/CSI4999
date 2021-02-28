@@ -1,17 +1,20 @@
-package com.example.mlkittest;
+package com.csi4999.snapnstore;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.mlkittest.R;
+
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     Button register, log_in;
     EditText First_Name, Last_Name, User_Name, Email, Password ;
@@ -27,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_signup);
 
         //Assign Id'S
         First_Name = (EditText)findViewById(R.id.editTextF_Name);
@@ -57,20 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 else {
 
                     // If EditText is empty then this block will execute .
-                    Toast.makeText(MainActivity.this, "Please fill all form fields.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignUpActivity.this, "Please fill all form fields.", Toast.LENGTH_LONG).show();
 
                 }
 
-
-            }
-        });
-
-        log_in.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(MainActivity.this,UserLoginActivity.class);
-                startActivity(intent);
 
             }
         });
@@ -99,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void UserRegisterFunction(final String F_Name, final String L_Name, final String U_name, final String email, final String password){
+    public void UserRegisterFunction(final String firstName, final String lastName, final String userName, final String email, final String password){
 
         class UserRegisterFunctionClass extends AsyncTask<String,Void,String> {
 
@@ -107,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                progressDialog = ProgressDialog.show(MainActivity.this,"Loading Data",null,true,true);
+                progressDialog = ProgressDialog.show(SignUpActivity.this,"Loading Data",null,true,true);
             }
 
             @Override
@@ -117,22 +110,22 @@ public class MainActivity extends AppCompatActivity {
 
                 progressDialog.dismiss();
 
-                    Toast.makeText(MainActivity.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignUpActivity.this,httpResponseMsg.toString(), Toast.LENGTH_LONG).show();
 
             }
 
             @Override
             protected String doInBackground(String... params) {
 
-                hashMap.put("f_name",params[0]);
+                hashMap.put("firstName",params[0]);
 
-                hashMap.put("L_name",params[1]);
+                hashMap.put("lastName",params[1]);
 
-                hashMap.put("U_name",params[2]);
+                hashMap.put("userName",params[2]);
 
                 hashMap.put("email",params[3]);
 
-                hashMap.put("password",params[3]);
+                hashMap.put("password",params[4]);
 
                 finalResult = httpParse.postRequest(hashMap, HttpURL);
 
@@ -142,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
         UserRegisterFunctionClass userRegisterFunctionClass = new UserRegisterFunctionClass();
 
-        userRegisterFunctionClass.execute(F_Name,L_Name,email,password);
+        userRegisterFunctionClass.execute(firstName,lastName,userName,email,password);
     }
 
 }
