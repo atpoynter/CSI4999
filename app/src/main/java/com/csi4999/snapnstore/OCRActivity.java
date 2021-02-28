@@ -69,15 +69,6 @@ public class OCRActivity extends AppCompatActivity {
         btnCapture = (Button) findViewById(R.id.btn_capture);
         btnPass = (Button) findViewById(R.id.btn_pass);
 
-        btnCapture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cameraView.start();
-                cameraView.captureImage();
-                graphicOverlay.clear();
-            }
-        });
-
         btnPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -98,6 +89,17 @@ public class OCRActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnCapture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cameraView.start();
+                cameraView.captureImage();
+                graphicOverlay.clear();
+            }
+        });
+
+
         //Event Camera View
         cameraView.addCameraKitListener(new CameraKitEventListener() {
             @Override

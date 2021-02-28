@@ -23,4 +23,5 @@
     <string name="submit2">Submit</string>
     <string name="large_png">large png</string>
     <string name="keep_text">Keep Text</string>
+    <string name="scan_barcode">Scan Barcode</string>
 </resources>
