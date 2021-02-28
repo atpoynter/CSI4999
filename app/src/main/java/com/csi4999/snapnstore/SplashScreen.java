@@ -1,8 +1,11 @@
-package com.example.mlkittest;
+package com.csi4999.snapnstore;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mlkittest.R;
+//import android.support.v7.app.AppCompatActivity;
 
 
 //import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +28,7 @@ public class SplashScreen extends AppCompatActivity {
                 }catch(InterruptedException e){
                     e.printStackTrace();
                 }finally{
-                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                    Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
                     startActivity(intent);
                 }
             }

@@ -1,4 +1,4 @@
-package com.example.mlkittest.Helper;
+package com.csi4999.snapnstore.Helper;
 
 /*
  * Copyright (C) The Android Open Source Project

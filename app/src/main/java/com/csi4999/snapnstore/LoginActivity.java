@@ -1,20 +1,24 @@
-package com.example.mlkittest;
+package com.csi4999.snapnstore;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.mlkittest.R;
+
 import java.util.HashMap;
 
-public class UserLoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     EditText Username, Password;
-    Button LogIn ;
+    Button LogIn, SignUp;
     String PasswordHolder, UsernameHolder;
     String finalResult ;
     String HttpURL = "http://35.223.15.126/AndroidUserLogin.php";
@@ -32,6 +36,7 @@ public class UserLoginActivity extends AppCompatActivity {
         Username = (EditText)findViewById(R.id.username);
         Password = (EditText)findViewById(R.id.password);
         LogIn = (Button)findViewById(R.id.Login);
+        SignUp = (Button)findViewById(R.id.signup);
 
         LogIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,12 +51,23 @@ public class UserLoginActivity extends AppCompatActivity {
                 }
                 else {
 
-                    Toast.makeText(UserLoginActivity.this, "Please fill all form fields.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Please fill all form fields.", Toast.LENGTH_LONG).show();
 
                 }
 
             }
         });
+
+        SignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
     }
     public void CheckEditTextIsEmptyOrNot(){
 
@@ -76,7 +92,7 @@ public class UserLoginActivity extends AppCompatActivity {
             protected void onPreExecute() {
                 super.onPreExecute();
 
-                progressDialog = ProgressDialog.show(UserLoginActivity.this,"Loading Data",null,true,true);
+                progressDialog = ProgressDialog.show(LoginActivity.this,"Loading Data",null,true,true);
             }
 
             @Override
@@ -90,7 +106,7 @@ public class UserLoginActivity extends AppCompatActivity {
 
                     finish();
 
-                    Intent intent = new Intent(UserLoginActivity.this, OCRActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, TableActivity.class);
 
                     intent.putExtra(UserName,username);
 
@@ -99,7 +115,7 @@ public class UserLoginActivity extends AppCompatActivity {
                 }
                 else{
 
-                    Toast.makeText(UserLoginActivity.this,httpResponseMsg,Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this,httpResponseMsg,Toast.LENGTH_LONG).show();
                 }
 
             }

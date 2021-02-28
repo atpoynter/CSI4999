@@ -1,4 +1,4 @@
-package com.example.mlkittest;
+package com.csi4999.snapnstore;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
