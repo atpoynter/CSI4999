@@ -1,13 +1,16 @@
 package com.csi4999.snapnstore;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -150,11 +153,43 @@ public class BarcodeActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.d("EDMT_ERROR", e.getMessage());
+                        Toast.makeText(BarcodeActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
-
                 });
     }
+
+    private void processResult(List<FirebaseVisionBarcode> firebaseVisionBarcodes)
+    {for(FirebaseVisionBarcode item : firebaseVisionBarcodes)
+    {
+        int value_type = item.getValueType();
+        switch (value_type)
+        {
+            case FirebaseVisionBarcode.TYPE_TEXT:
+            {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage(item.getRawValue())
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+            break;
+//Note URL may be removed, there may not be a need for this, each supported Barcode type in our app should have its own case
+            case FirebaseVisionBarcode.TYPE_URL:
+            {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getRawValue()));
+                startActivity(intent);
+
+            }
+            break;
+            default:
+
+                break;
+
     }
 
 }
