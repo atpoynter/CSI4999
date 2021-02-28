@@ -1,8 +1,9 @@
-package com.example.mlkittest;
+package com.csi4999.snapnstore;
 
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.runner.AndroidJUnit4;
+import androidx.test.InstrumentationRegistry;
+import androidx.test.runner.AndroidJUnit4;
+
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.mlkittest", appContext.getPackageName());
+        assertEquals("com.csi4999.snapnstore", appContext.getPackageName());
     }
 }

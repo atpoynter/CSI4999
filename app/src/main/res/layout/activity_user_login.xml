@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:padding="20dp"
-    tools:context="com.example.mlkittest.com.csi4999.mlkittest.LoginActivity">
+    tools:context="com.csi4999.snapnstore.com.csi4999.mlkittest.LoginActivity">
 
     <Button
         android:id="@+id/signup"
