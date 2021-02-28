@@ -57,7 +57,7 @@ public class VerifyDataActivity extends AppCompatActivity {
                 // and convert it to string
 
                 // Create the Intent object of this class Context() to Second_activity class
-                Intent intent = new Intent(getApplicationContext(), VerifyDataActivity.class);
+                Intent intent = new Intent(getApplicationContext(), BarcodeActivity.class);
 
                 // now by putExtra method put the value in key, value pair
                 // key is message_key by this key we will receive the value, and put the string
