@@ -12,6 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">    </com.wonderkiln.camerakit.CameraView>
 
+    <com.csi4999.snapnstore.Helper.GraphicOverlay
+        android:id="@+id/grahpic_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <Button
         android:id="@+id/btn_pass2"
         android:layout_width="149dp"

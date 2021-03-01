@@ -27,8 +27,7 @@
         android:layout_marginBottom="248dp"
         android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/barcode" />
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/submit2"

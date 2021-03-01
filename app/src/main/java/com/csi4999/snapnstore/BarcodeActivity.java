@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.csi4999.snapnstore.Helper.GraphicOverlay;
+import com.csi4999.snapnstore.Helper.RectOverlay;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -53,6 +54,7 @@ public class BarcodeActivity extends AppCompatActivity {
     AlertDialog waitingDialog;
     GraphicOverlay graphicOverlay;
     Button btnCapture, btnPass;
+
     String str2;
 
     @Override
@@ -74,6 +76,8 @@ public class BarcodeActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+
+        graphicOverlay = (GraphicOverlay) findViewById(R.id.graphic_overlay);
         waitingDialog = new SpotsDialog.Builder()
                 .setCancelable(false)
                 .setMessage("Please wait")
@@ -182,6 +186,13 @@ public class BarcodeActivity extends AppCompatActivity {
 
     private void processResult(List<Barcode> barcodes) {
         for (Barcode barcode: barcodes) {
+
+            //Identify in image, draw graphic
+
+            Rect rectBounds = barcode.getBoundingBox();
+            RectOverlay rectOverlay = new RectOverlay(graphicOverlay, rectBounds);
+            graphicOverlay.add(rectOverlay);
+
             Rect bounds = barcode.getBoundingBox();
             Point[] corners = barcode.getCornerPoints();
 
@@ -190,7 +201,7 @@ public class BarcodeActivity extends AppCompatActivity {
             int valueType = barcode.getValueType();
 
             switch (valueType) {
-                case Barcode.TYPE_TEXT: {
+                case Barcode.TYPE_PRODUCT: {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setMessage(barcode.getRawValue());
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -204,12 +215,12 @@ public class BarcodeActivity extends AppCompatActivity {
                 }
                 break;
 //Note URL may be removed, there may not be a need for this, each supported Barcode type in our app should have its own case
-                case FirebaseVisionBarcode.TYPE_URL: {
+                case Barcode.TYPE_URL: {
                     Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(barcode.getRawValue()));
                     startActivity(intent);
                 }
                 break;
-                case FirebaseVisionBarcode.TYPE_CONTACT_INFO: {
+                case Barcode.TYPE_CONTACT_INFO: {
                     String message = "QR Contact info detected, not a Product Code!";
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setMessage(message);
