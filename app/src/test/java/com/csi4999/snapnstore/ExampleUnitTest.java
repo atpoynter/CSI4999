@@ -1,4 +1,4 @@
-package com.example.mlkittest;
+package com.csi4999.snapnstore;
 
 import org.junit.Test;
 

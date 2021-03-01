@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mlkittest">
+    package="com.csi4999.snapnstore">
 
     <application
         android:allowBackup="true"
@@ -8,9 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MLkitTest"
+
+        android:theme="@style/Theme.snapnstore"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.csi4999.snapnstore.TableActivity"></activity>
+        <activity android:name=".BarcodeActivity"
+            android:screenOrientation ="portrait">
+            <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="barcode" />
+        </activity>
+        <activity android:name=".TableActivity" />
+
         <activity
             android:name="com.csi4999.snapnstore.SplashScreen"
             android:label="@string/app_name"
@@ -21,25 +29,37 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.csi4999.snapnstore.SignUpActivity">
+
+        <activity android:name=".SignUpActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name="com.csi4999.snapnstore.LoginActivity" />
-        <activity android:name="com.csi4999.snapnstore.VerifyDataActivity">
+
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".VerifyDataActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <meta-data
-            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
-            android:value="ocr" />
-        <activity android:name="com.csi4999.snapnstore.OCRActivity">
+
+
+
+        <activity android:name=".OCRActivity">
+            <meta-data
+                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+                android:value="ocr" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
 
         <uses-library
             android:name="org.apache.http.legacy"

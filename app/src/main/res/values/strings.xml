@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MLkitTest</string>
+    <string name="app_name">Snap N Store</string>
     <string name="recognize">RECOGNIZE</string>
     <string name="user_login_form">User Login Form</string>
     <string name="logged_is_as">Logged is as</string>
@@ -22,4 +22,6 @@
     <string name="barcode">Barcode</string>
     <string name="submit2">Submit</string>
     <string name="large_png">large png</string>
+    <string name="keep_text">Keep Text</string>
+    <string name="scan_barcode">Scan Barcode</string>
 </resources>

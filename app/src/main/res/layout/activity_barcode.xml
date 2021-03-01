@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.csi4999.snapnstore.OCRActivity">
+    tools:context=".BarcodeActivity"
+    android:orientation="vertical">
 
     <com.wonderkiln.camerakit.CameraView
-        android:id="@+id/camera_view"
+        android:id="@+id/camera_view2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </com.wonderkiln.camerakit.CameraView>
+        android:layout_height="match_parent">    </com.wonderkiln.camerakit.CameraView>
 
     <com.csi4999.snapnstore.Helper.GraphicOverlay
-        android:id="@+id/graphic_overlay"
+        android:id="@+id/grahpic_overlay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"> </com.csi4999.snapnstore.Helper.GraphicOverlay>
+        android:layout_height="match_parent"/>
 
     <Button
-        android:id="@+id/btn_pass"
+        android:id="@+id/btn_pass2"
         android:layout_width="149dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -28,7 +28,7 @@
         android:text="@string/keep_text" />
 
     <Button
-        android:id="@+id/btn_capture"
+        android:id="@+id/btn_capture2"
         android:layout_width="154dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -36,7 +36,6 @@
         android:layout_marginBottom="0dp"
         android:background="@drawable/buttonshape"
         android:text="@string/recognize"></Button>
-
 
 
 

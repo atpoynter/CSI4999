@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="#000000"
     android:padding="20dp"
-    tools:context="com.example.mlkittest.MainActivity2">
-
+    tools:context="com.csi4999.snapnstore.MainActivity2">
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
