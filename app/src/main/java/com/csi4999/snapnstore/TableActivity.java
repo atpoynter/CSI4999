@@ -1,15 +1,19 @@
 package com.csi4999.snapnstore;
 
 import android.content.Intent;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;

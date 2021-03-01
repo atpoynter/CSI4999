@@ -1,9 +1,11 @@
 package com.csi4999.snapnstore;
 
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -12,11 +14,14 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import java.util.HashMap;
 
 public class VerifyDataActivity extends AppCompatActivity {
     TextView receiver_msg1, receiver_msg2;
+
     Button btnSubmit, btnBarcode;
+
     String ocrDataHolder, ocrDataHolder2;
     String finalResult ;
     String HttpURL = "http://35.223.15.126/AndroidUserSubmit.php";
@@ -30,17 +35,20 @@ public class VerifyDataActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_data);
+
         btnSubmit = (Button)findViewById(R.id.submit2);
         receiver_msg1 = (TextView)findViewById(R.id.ocr_data);
         receiver_msg2 = (TextView)findViewById(R.id.ocr_data2);
         btnBarcode = (Button) findViewById(R.id.btn_barcode);
 
         // create the get Intent object
+
         Intent intent = getIntent();
 
         // receive the value by getStringExtra() method
         // and key must be same which is send by first activity
         String str = intent.getStringExtra("message_key");
+
         String str2 = intent.getStringExtra("message_key2");
 
         // display the string into textView
@@ -72,6 +80,7 @@ public class VerifyDataActivity extends AppCompatActivity {
 
         //Adding Click Listener on button.
         btnSubmit.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
@@ -97,8 +106,6 @@ public class VerifyDataActivity extends AppCompatActivity {
         });
 
     }
-
-
 
     public void CheckEditTextIsEmptyOrNot(){
 

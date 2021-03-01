@@ -7,7 +7,6 @@
     android:background="#000000"
     android:padding="20dp"
     tools:context="com.csi4999.snapnstore.MainActivity2">
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"

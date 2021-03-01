@@ -3,6 +3,7 @@ package com.csi4999.snapnstore;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,8 +29,10 @@ import com.wonderkiln.camerakit.CameraKitImage;
 import com.wonderkiln.camerakit.CameraKitVideo;
 import com.wonderkiln.camerakit.CameraView;
 
+
 import java.util.Arrays;
 import java.util.List;
+
 
 import dmax.dialog.SpotsDialog;
 
@@ -68,7 +71,6 @@ public class OCRActivity extends AppCompatActivity {
         graphicOverlay = (GraphicOverlay) findViewById(R.id.graphic_overlay);
         btnCapture = (Button) findViewById(R.id.btn_capture);
         btnPass = (Button) findViewById(R.id.btn_pass);
-
         btnPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -89,7 +91,7 @@ public class OCRActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+      
         btnCapture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,8 +100,6 @@ public class OCRActivity extends AppCompatActivity {
                 graphicOverlay.clear();
             }
         });
-
-
         //Event Camera View
         cameraView.addCameraKitListener(new CameraKitEventListener() {
             @Override
@@ -200,3 +200,4 @@ public class OCRActivity extends AppCompatActivity {
         waitingDialog.dismiss();
     }
 }
+
