@@ -151,7 +151,7 @@ public class VisionActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Log.d("EDMT_ERROR", e.getMessage());
+                Log.d("ERROR", e.getMessage());
             }
 
         });
