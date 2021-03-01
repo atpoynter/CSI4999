@@ -91,20 +91,22 @@ public class BarcodeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-
+                finish();
                 // get the value which input by user in EditText
                 // and convert it to string
 
                 // Create the Intent object of this class Context() to Second_activity class
-                Intent intent = new Intent(getApplicationContext(), VerifyDataActivity.class);
+               Intent intent = new Intent(); //(getApplicationContext(), VerifyDataActivity.class);
 
                 // now by putExtra method put the value in key, value pair
                 // key is message_key by this key we will receive the value, and put the string
 
                 intent.putExtra("message_key2", str2);
-
+                setResult(RESULT_OK, intent);
+                finish();
                 // start the Intent
-                startActivity(intent);
+                //finish();
+                //startActivity(intent);
             }
         });
 
@@ -200,7 +202,7 @@ public class BarcodeActivity extends AppCompatActivity {
             int valueType = barcode.getValueType();
 
             switch (valueType) {
-                case Barcode.TYPE_PRODUCT: {
+                case Barcode.TYPE_TEXT: {
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setMessage(barcode.getRawValue());
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -240,7 +242,8 @@ public class BarcodeActivity extends AppCompatActivity {
 
             }
         }
-
+        Toast toast = Toast.makeText(getApplicationContext(), str2 , Toast.LENGTH_SHORT);
+        toast.show();
             waitingDialog.dismiss();
 
         }
