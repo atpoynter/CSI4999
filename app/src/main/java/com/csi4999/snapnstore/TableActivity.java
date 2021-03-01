@@ -41,7 +41,7 @@ public class TableActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(TableActivity.this, OCRActivity.class);
+                Intent intent = new Intent(TableActivity.this, VisionActivity.class);
                 startActivity(intent);
 
             }

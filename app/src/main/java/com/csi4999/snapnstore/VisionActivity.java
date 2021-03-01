@@ -36,7 +36,7 @@ import java.util.List;
 
 import dmax.dialog.SpotsDialog;
 
-public class OCRActivity extends AppCompatActivity {
+public class VisionActivity extends AppCompatActivity {
 
     CameraView cameraView;
     AlertDialog waitingDialog;
@@ -59,7 +59,7 @@ public class OCRActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ocractivity_main);
+        setContentView(R.layout.activity_vision);
 
         waitingDialog = new SpotsDialog.Builder()
                 .setCancelable(false)

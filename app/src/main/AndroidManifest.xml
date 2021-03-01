@@ -46,7 +46,7 @@
 
 
 
-        <activity android:name=".OCRActivity">
+        <activity android:name=".VisionActivity">
             <meta-data
                 android:name="com.google.firebase.ml.vision.DEPENDENCIES"
                 android:value="ocr" />
