@@ -44,8 +44,6 @@
             </intent-filter>
         </activity>
 
-
-
         <activity android:name=".VisionActivity">
             <meta-data
                 android:name="com.google.firebase.ml.vision.DEPENDENCIES"
@@ -60,9 +58,4 @@
             android:required="false" />
     </application>
 
-
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false"/>
-    </application>
 </manifest>

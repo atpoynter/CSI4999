@@ -76,8 +76,6 @@ public class BarcodeActivity extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-
-        graphicOverlay = (GraphicOverlay) findViewById(R.id.graphic_overlay);
         waitingDialog = new SpotsDialog.Builder()
                 .setCancelable(false)
                 .setMessage("Please wait")
@@ -85,7 +83,7 @@ public class BarcodeActivity extends AppCompatActivity {
                 .build();
 
         cameraView = (CameraView) findViewById(R.id.camera_view2);
-        graphicOverlay = (GraphicOverlay) findViewById(R.id.graphic_overlay);
+        graphicOverlay = (GraphicOverlay) findViewById(R.id.grahpic_overlay2);
         btnCapture = (Button) findViewById(R.id.btn_capture2);
         btnPass = (Button) findViewById(R.id.btn_pass2);
 
@@ -163,6 +161,7 @@ public class BarcodeActivity extends AppCompatActivity {
                 new BarcodeScannerOptions .Builder()
 
                         .setBarcodeFormats(Barcode.FORMAT_UPC_A)
+                        .setBarcodeFormats(Barcode.FORMAT_UPC_E)
                         .setBarcodeFormats(Barcode.FORMAT_QR_CODE)
                         .build();
         BarcodeScanner scanner = BarcodeScanning.getClient(options);
@@ -184,7 +183,7 @@ public class BarcodeActivity extends AppCompatActivity {
                 });
     }
 
-    private void processResult(List<Barcode> barcodes) {
+    public void processResult(List<Barcode> barcodes) {
         for (Barcode barcode: barcodes) {
 
             //Identify in image, draw graphic
@@ -210,6 +209,7 @@ public class BarcodeActivity extends AppCompatActivity {
 
                         }
                     });
+                    String str2 = rawValue;
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }
