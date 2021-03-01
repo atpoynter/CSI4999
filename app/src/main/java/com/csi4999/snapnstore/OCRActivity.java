@@ -184,6 +184,7 @@ public class OCRActivity extends AppCompatActivity {
             }
         }
 
+        /*
         str="";
         for (int i = 0; i < blocks.size(); i++) {
             List<FirebaseVisionText.Line> lines = blocks.get(i).getLines();
