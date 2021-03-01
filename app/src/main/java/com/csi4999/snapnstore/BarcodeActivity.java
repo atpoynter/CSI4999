@@ -161,7 +161,6 @@ public class BarcodeActivity extends AppCompatActivity {
         InputImage image = InputImage.fromBitmap(bitmap, rotationDegree);
         BarcodeScannerOptions options =
                 new BarcodeScannerOptions .Builder()
-
                         .setBarcodeFormats(Barcode.FORMAT_UPC_A)
                         .setBarcodeFormats(Barcode.FORMAT_UPC_E)
                         .setBarcodeFormats(Barcode.FORMAT_QR_CODE)
@@ -203,6 +202,10 @@ public class BarcodeActivity extends AppCompatActivity {
 
             switch (valueType) {
                 case Barcode.TYPE_TEXT: {
+                        String str2 = barcode.getRawValue();
+                        int type = barcode.getFormat();
+                        //break;
+
                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
                     builder.setMessage(barcode.getRawValue());
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -211,7 +214,7 @@ public class BarcodeActivity extends AppCompatActivity {
 
                         }
                     });
-                    String str2 = rawValue;
+                    //String str2 = rawValue;
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }
