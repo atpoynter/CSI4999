@@ -198,10 +198,12 @@ public class BarcodeActivity extends AppCompatActivity {
 
             String rawValue = barcode.getRawValue();
 
-            int valueType = barcode.getValueType();
+            //int valueType = barcode.getValueType();
 
-            switch (valueType) {
-                case Barcode.TYPE_TEXT: {
+            int scannedFormat = barcode.getFormat();
+
+            switch (scannedFormat) {
+                case Barcode.FORMAT_UPC_A: {
                         String str2 = barcode.getRawValue();
                         int type = barcode.getFormat();
                         //break;
